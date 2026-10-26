@@ -7,6 +7,9 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { WishlistProvider } from "@/components/wishlist/WishlistProvider";
 import { SITE } from "@/lib/site";
 
+// Canonical URL for SEO
+const canonicalUrl = `${SITE.url}`;
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -47,6 +50,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE.name} — ${SITE.tagline}`,
     description: SITE.description,
+  },
+  alternates: {
+    canonical: canonicalUrl,
   },
 };
 

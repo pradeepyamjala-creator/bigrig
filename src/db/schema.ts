@@ -535,6 +535,22 @@ export const coupons = pgTable("coupons", {
 });
 
 /* -------------------------------------------------------------------------- */
+/*  Newsletter                                                                 */
+/* -------------------------------------------------------------------------- */
+
+export const newsletterSubscribers = pgTable(
+  "newsletter_subscribers",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    email: text("email").notNull().unique(),
+    subscribedAt: timestamp("subscribed_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+  },
+  (t) => [index("newsletter_subscribers_email_idx").on(t.email)],
+);
+
+/* -------------------------------------------------------------------------- */
 /*  Contact messages                                                           */
 /* -------------------------------------------------------------------------- */
 

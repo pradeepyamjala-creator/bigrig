@@ -5,6 +5,7 @@ import type { ProductCardItem } from "@/lib/types";
 import { getTopSellers, getDeals } from "@/lib/queries";
 import { ProductCard } from "@/components/product/ProductCard";
 import { HomeVehicleFinder } from "@/components/home/HomeVehicleFinder";
+import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
 
 export const dynamic = "force-dynamic";
 
@@ -143,6 +144,11 @@ export default async function HomePage() {
             </Link>
           ))}
         </div>
+      </section>
+
+      {/* Newsletter signup */}
+      <section className="mx-auto max-w-7xl px-4 py-12">
+        <NewsletterForm />
       </section>
 
       {/* CTA band */}
